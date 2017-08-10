@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div id="wrapper">
+            <p>The email address you entered ({{emails[emails|length-1]["email"]}}) is a VALID email address! Thank you!</p>
+            <p>Email Address Entered:</p>
+            <table>
+                <tbody>
+                    {%for email in emails%}
+                        <tr>
+                            <td> {{email["email"]}}</td>
+                            <td> {{email["date"]}}</td>
+                        </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </body> 
+</html>
+
